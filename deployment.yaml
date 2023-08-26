@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: databricks-frontend-deployment
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: databricks-fe
+        image: databricks-frontend
+        ports:
+        - containerPort: 80
+        volumeMounts:
+         - mountPath: /var/log/nginx
+            name: databricks-frontend-logs
+        
+      volumes:
+      - name: databricks-frontend-logs
+        persistentVolumeClaim:
+          claimName: databricks-frontend-logs
+
+
+
+   
