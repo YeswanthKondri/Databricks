@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: databricks-fe
-        image: databricks-frontend
+        image: yeswanthkondri/databricks-frontend
         ports:
         - containerPort: 80
         volumeMounts:
