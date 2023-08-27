@@ -21,7 +21,7 @@ spec:
         - containerPort: 80
         volumeMounts:
          - mountPath: /var/log/nginx
-            name: databricks-frontend-logs
+           name: databricks-frontend-logs
         
       volumes:
       - name: databricks-frontend-logs
