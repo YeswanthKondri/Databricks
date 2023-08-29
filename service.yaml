@@ -4,10 +4,9 @@ metadata:
   name: databricks-service-frontend
   namespace: databricks
 spec:
-  type: LoadBalencer
   selector:
     app: frontend
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 30036
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
